@@ -1,0 +1,121 @@
+<ion-header *ngIf="isProfile">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1 *ngIf="!isProfile">Sign Up</h1>
+  <form [formGroup]="register" (ngSubmit)="registerUser(register.value)">
+    <div class="formContainer">
+      <div class="input-item">
+        <ion-item-divider color="light">Identity Information</ion-item-divider>
+        <ion-input type="text" formControlName="name" [class.invalid]="!register.controls.name.valid && submitAttempt && (register.controls.name.dirty || submitAttempt)"
+          placeholder="Name*"></ion-input>
+        <control-messages [control]="register.controls.name" Name="name" [submitAttempt]="submitAttempt"></control-messages>
+      </div>
+      <div class="input-item">
+        <ion-input type="number" formControlName="age" [class.invalid]="!register.controls.age.valid && submitAttempt && (register.controls.age.dirty || submitAttempt)"
+          placeholder="Age*"></ion-input>
+        <control-messages [control]="register.controls.age" Name="age" [submitAttempt]="submitAttempt"></control-messages>
+      </div>
+      <div class="input-item with-image">
+        <ion-item-divider color="light" class="margin-top-15">Physiological Information</ion-item-divider>
+        <div class="input-img">
+          <img src="assets/imgs/check.png" />
+        </div>
+        <ion-input type="number" formControlName="height" [class.invalid]="!register.controls.height.valid && submitAttempt && (register.controls.height.dirty || submitAttempt)"
+          placeholder="Height(inches)*"></ion-input>
+        <control-messages [control]="register.controls.height" Name="height" [submitAttempt]="submitAttempt"></control-messages>
+
+      </div>
+      <div class="input-item with-image">
+        <div class="input-img">
+          <img src="assets/imgs/check.png" />
+        </div>
+        <ion-input type="number" formControlName="weight" [class.invalid]="!register.controls.weight.valid && submitAttempt && (register.controls.weight.dirty || submitAttempt)"
+          placeholder="Weight(pound)*"></ion-input>
+        <control-messages [control]="register.controls.weight" Name="weight" [submitAttempt]="submitAttempt"></control-messages>
+      </div>
+      <div class="input-item">
+        <ion-item-divider color="light" class="margin-top-15">Medical Diagnostic</ion-item-divider>
+        <div class="lavel-lable">Bood Glucose Level Range*</div>
+        <ion-list radio-group formControlName="type" class="radio-group">
+          <label>
+            <ion-radio [value]="1"></ion-radio>
+            <span>No</span>
+          </label>
+          <label>
+            <ion-radio [value]="2"></ion-radio>
+            <span>Type 1</span>
+          </label>
+          <label>
+            <ion-radio [value]="3"></ion-radio>
+            <span>Type 2</span>
+          </label>
+        </ion-list>
+      </div>
+      <div class="bottom-block" *ngIf="register.controls.type.value!='1'">
+        <div class="input-item">
+          <ion-item-divider color="light" class="margin-top-15">What is your average daily glucose value upon awakening in the morning?</ion-item-divider>
+          <ion-input type="number" formControlName="dailyvalue" [class.invalid]="!register.controls.dailyvalue.valid && submitAttempt && (register.controls.dailyvalue.dirty || submitAttempt)"
+            placeholder="Enter a value between 75 and 200*"></ion-input>
+        </div>
+        <div class="input-item">
+          <ion-item-divider color="light" class="">Medication</ion-item-divider>
+          <ion-row>
+            <label col-12>
+              <ion-checkbox (click)="resetBox()" formControlName="isMadication"></ion-checkbox>
+              <span>No Madication</span>
+            </label>
+          </ion-row>
+        </div>
+        <div class="input-item">
+          <ion-row>
+            <div class="label" col-6 >
+              <ion-checkbox formControlName="sulfonylureas" [disabled]="register.controls.isMadication.value"></ion-checkbox>
+              <span>Sulfonylureas</span>
+            </div>
+            <div col-6> Chlorpropamind,<br>Tolazamide,<br>Tolbutamide</div>
+          </ion-row>
+        </div>
+        <div class="input-item">
+          <ion-row>
+            <div class="label" col-6>
+              <ion-checkbox formControlName="biguanides" [disabled]="register.controls.isMadication.value"></ion-checkbox>
+              <span>Biguanides</span>
+            </div>
+            <div col-6> Metformin</div>
+          </ion-row>
+        </div>
+        <div class="input-item">
+          <ion-row>
+            <div class="label" col-6>
+              <ion-checkbox formControlName="aglucosidese" [disabled]="register.controls.isMadication.value"></ion-checkbox>
+              <span>a-glucosidase</span>
+            </div>
+            <div col-6> Miglitol,<br>Acarbose</div>
+          </ion-row>
+        </div>
+        <div class="input-item">
+          <ion-row>
+            <div class="label" col-6>
+              <ion-checkbox formControlName="injection" [disabled]="register.controls.isMadication.value"></ion-checkbox>
+              <span>Insulin Injection</span>
+            </div>
+            
+          </ion-row>
+        </div>
+      </div>
+      <div class="bottomContainer">
+        <!-- [disabled]="!register.valid" -->
+        <button ion-button full class="">
+          <span class="btn-text">{{isProfile ? 'Update' : 'Sign Up Now'}}</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</ion-content>

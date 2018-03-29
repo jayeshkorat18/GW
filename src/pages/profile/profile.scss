@@ -1,0 +1,75 @@
+profile-home {
+  h1{
+    text-align: center;
+  }
+  .with-image{
+    .input-img{
+      position: absolute;
+      width: 25px;
+    }
+    input{
+      margin-left: 25px;
+    }
+    img{
+      margin-top: 8px;
+      padding: 4px;
+    }
+  }
+  .input{
+    border-bottom: 1px solid #9E9E9E;
+  }
+  .invalid{
+    border-bottom: 1px solid #ff0000;
+  }
+  .item-divider{
+    color: #000;
+    background-color: #ffffff;
+    font-size: 16px;
+    padding-left: 0px;
+    border-bottom: none;
+    
+    ion-label{
+      margin-bottom: 0px;
+      white-space: normal;
+    }
+  }
+  .margin-top-15{
+    margin-top: 15px;
+  }
+  .lavel-lable{
+    font-size: 15px;
+    color: #9E9E9E;
+    font-weight: bold;
+  }
+  .radio{
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    padding-top: 10px;
+    margin-right: 4px;
+  }
+  .radio-group{
+    span{
+      top: -2px;
+      position: relative;
+      color: #9E9E9E;
+    }
+  }
+  .bottom-block{
+    .row{
+      border-bottom: 1px solid #9E9E9E;
+      .label,label{
+        padding: 10px;
+        span{
+          position: relative;
+          top: -2px;
+          font-weight: bold;
+          color: #9E9E9E;
+        }
+      }
+    }
+  }
+  .bottomContainer{
+    margin-top: 20px;
+  }
+}
