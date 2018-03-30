@@ -18,3 +18,20 @@
 .error{
   color: #ff0000;
 }
+.top-content {
+  background-color: color($colors, primary, base);
+  color: #FFF;
+  text-align: center;
+  .name{
+    font-size: 25px;
+    padding-top: 10px;
+  }
+  p{
+    margin-top: 0px;
+    font-size: 20px;
+  }
+}
+ 
+.header-md::after{
+  background-image: none;
+}

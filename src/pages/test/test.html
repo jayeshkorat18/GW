@@ -1,12 +1,59 @@
-<ion-header>
-    <ion-navbar>
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title>Test</ion-title>
-    </ion-navbar>
-  </ion-header>
+<ion-header >
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Test</ion-title>
+  </ion-navbar>
+</ion-header>
 
-<ion-content padding>
+<ion-content>
+  <div class="top-content">
+    <div class="name">Hi {{userData.name}}</div>
+    <ion-row>
+      <ion-col>
+        <span>weight</span>
+        <p>{{userData.weight}} Pound</p>
+      </ion-col>
+      <ion-col>
+        <span>Age</span>
+        <p>{{userData.age}}</p>
+      </ion-col>
+      <ion-col>
+        <span>Height</span>
+        <p> {{userData.height}} Inches</p>
 
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="meal-container">
+    <ion-row>
+      <ion-col (click)="selected=1">
+          <img src="assets/imgs/logo.png" />
+          <p [class.active]="selected==1">Fasting</p>
+      </ion-col>
+      <ion-col (click)="selected=2">
+          <img src="assets/imgs/logo.png" />
+          <p [class.active]="selected==2">1 Hour <br>Post Meal</p>
+      </ion-col>
+      <ion-col (click)="selected=3">
+          <img src="assets/imgs/logo.png" />
+          <p [class.active]="selected==3">2 Hour<br>Post Meal</p>
+      </ion-col>
+      <ion-col (click)="selected=4">
+          <img src="assets/imgs/logo.png" />
+          <p [class.active]="selected==4">3 Hour<br>Post Meal</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <!-- <button ion-button secondary (click)="gotoPage()" >isEnabled</button>
+  <button ion-button secondary (click)="scan()" >scan</button>
+  <button ion-button secondary (click)="enable()" >enable blutooth</button>
+  <button ion-button secondary (click)="showBluetoothSettings()" >showBluetoothSettings</button> -->
 </ion-content>
+<ion-footer>
+  <p>dsfdsfdsfsf sfd sdfdsfsd sdfdsfsd sdfdsfds</p>
+
+  <button ion-button secondary (click)="enable()">Start</button>
+
+</ion-footer>

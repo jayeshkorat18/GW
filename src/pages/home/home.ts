@@ -9,10 +9,12 @@ import { HelpPage } from '../help/help';
 })
 export class HomePage {
 
+  public userData:any;
   constructor(public navCtrl: NavController) {
-
+    this.userData=JSON.parse(localStorage.getItem('profileData'));
+   
   }
-
+  
   gotoPage(){
     this.navCtrl.push(HelpPage)
   }

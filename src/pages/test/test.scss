@@ -1,3 +1,28 @@
 page-test {
+  .meal-container{
+    text-align: center;
+    img{
+      width: 40px;
+    }
+    p{
+      margin-top: 0px;
+    }
+    .active{
+      color: color($colors, primary, base);
+    }
 
+  }
+  .footer{
+    height: 150px;
+    text-align: center;
+    p{
+      padding: 0 10%;
+      font-size: 18px;
+      text-align: center;
+    }
+    .button-block{
+      text-align: center;
+      width: 100%;
+    }
+  }
 }

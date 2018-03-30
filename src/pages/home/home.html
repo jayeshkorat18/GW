@@ -7,12 +7,42 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content>
+  <div class="top-content">
+    <div class="name">Hi {{userData.name}}</div>
+    <ion-row>
+      <ion-col>
+        <span>weight</span>
+        <p>{{userData.weight}} Pound</p>
+      </ion-col>
+      <ion-col>
+        <span>Age</span>
+        <p>{{userData.age}}</p>
+      </ion-col>
+      <ion-col>
+        <span>Height</span>
+        <p> {{userData.height}} Inches</p>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary (click)="gotoPage()" >Go Page</button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="middle-content">
+    <ion-row>
+      <ion-col>
+        <img src="assets/imgs/logo.png" />
+        <p>Test</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <img src="assets/imgs/logo.png" />
+          <p>History</p>
+      </ion-col>
+      <ion-col>
+          <img src="assets/imgs/logo.png" />
+          <p>Help</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <button ion-button secondary (click)="gotoPage()">Go Page</button>
 </ion-content>
